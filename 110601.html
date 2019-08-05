@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas</title>
+</head>
+<body>
+	<canvas width="500" height="500"></canvas>
+</body>
+<script>
+	var mycanva=document.querySelector("canvas")
+    var ctx= mycanva.getContext("2d")
+    var img=document.createElement('img')
+    img.src='./image/04.png'
+
+    img.onload = function(){
+
+      imgh=img.height;
+      imgw=img.width
+      ph=img.height/4
+      imgw=img.width/4
+
+           
+
+ctx.drawImage(img,0,0,imgw,ph,200,200,imgw,ph)         
+             
+
+           
+
+
+    }
+    
+
+</script>
+
+</html>

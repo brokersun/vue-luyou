@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas</title>
+</head>
+<body>
+	<canvas width="500" height="500"></canvas>
+	
+</body>
+<script>
+	var mycanvas=document.querySelector("canvas")
+	var ctx=mycanvas.getContext("2d")
+	ctx.beginPath()
+	ctx.moveTo(0,249.5)
+	ctx.lineTo(500,249.5)
+	ctx.stroke()
+	ctx.beginPath()
+	ctx.moveTo(249.5, 0)
+	ctx.lineTo(249.5,500)
+	ctx.stroke()
+    ctx.font= '40px Microsoft Yahei';
+    ctx.textAlign='center'
+    ctx.textBaseLine='middle'
+var str='中国，你好'
+    ctx.fillText(str, 250,260)
+     ctx.stroke();
+     ctx.beginPath();
+     var w =ctx.measureText(str).width;
+
+     ctx.moveTo(250-w/2, 270-0.5)
+     ctx.lineTo(250+w/2,270-0.5)
+     ctx.stroke()
+
+</script>
+</html>

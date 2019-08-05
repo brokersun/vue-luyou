@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canavas</title>
+</head>
+
+<body>
+<canvas width="500" height="500"></canvas>	
+</body>
+<script>
+	var mycanvas=document.querySelector("canvas")
+	var ctx= mycanvas.getContext("2d")
+         ctx.translate(250,250);
+	    var num=12
+    for(i=0;i<12;i++){
+
+      ctx.beginPath()
+      angle=(Math.PI*2/num)*i
+      x=Math.cos(angle)*200
+      y=Math.sin(angle)*200
+      ctx.moveTo(x, y)
+       ctx.lineTo(x*1.2, y*1.2)
+       ctx.stroke()
+    }
+	
+
+</script>
+</html>

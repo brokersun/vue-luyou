@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>连线</title>
+	<script src="./jquery-3.0.0.min.js"></script>
+<style>
+
+
+.container{
+
+width: 1000px;
+height: 400px;
+margin: 0 auto;
+
+position: relative;
+
+}
+	.canvas{
+
+   height: 400px;
+   width: 500px;
+    margin-left:250px;
+    border: 1px solid;
+    position: absolute;
+
+	}
+	.f{
+     
+     height: 100px;
+     width: 200px;
+     float: left;
+
+     position: absolute;
+     background: red;
+    
+	}
+	.r{
+     
+     height: 100px;
+     width: 200px;
+     margin-left:800px;
+     background: blue;
+    /*margin-bottom: 0px;*/
+     position: absolute;
+	}
+.x{
+
+     height: 100px;
+     width: 200px;
+     margin-top: 150px;
+     float: left;
+    background: silver;
+     position: absolute;
+
+}
+.s{
+
+     height: 100px;
+     width: 200px;
+     margin-top: 150px;
+     margin-left:800px;
+     float: right;
+     background: black;
+
+ position: absolute;
+
+}
+.xx{
+
+     height: 100px;
+     width: 200px;
+     margin-top: 300px;
+     float: left;
+    background: silver;
+     position: absolute;
+
+}
+.ss{
+
+     height: 100px;
+     width: 200px;
+     margin-top: 300px;
+     margin-left:800px;
+     float: right;
+     background: black;
+
+ position: absolute;
+
+}
+</style>
+</head>
+
+<body>
+    <div class="container">
+    	 <div class="f"></div>
+    	  <div class="canvas">
+    	  	<canvas width="500"  height="400"></canvas>
+    	  </div>
+         <div  class="r"></div>
+         
+         	<div class ="x"></div>
+           <div class ="s"></div>
+ 	       <div class ="xx"></div>
+           <div class ="ss"></div>
+     
+     
+         
+   
+    </div>
+   
+	
+	<script>
+  var canvas =document.querySelector("canvas")
+  var ctx=canvas.getContext("2d");
+  ctx.moveTo(100, 100);
+  ctx.lineTo(200, 200);
+  ctx.stroke();
+  
+$(".container").on('click',function(e){
+
+ var x= e.pageX;
+ var y= e.pageY;
+  console.log("f1"+ x );
+  console.log("f1" + y );
+  $(".container div").on('click',function(e){
+
+var x0= e.pageX;
+ var y0= e.pageY;
+ console.log(x0);
+  console.log(y0);
+
+  })
+
+
+})
+	</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas</title>
+</head>
+
+<body>
+<canvas width="500" height="500"></canvas>	
+</body>
+<script>
+	var mycanvas=document.querySelector("canvas")
+	var ctx=mycanvas.getContext("2d")
+for(i=0;i<=600;i++){
+    
+  var x=i;
+  var y=50*Math.sin(x/10)+100
+  ctx.lineTo(x, y)
+
+}
+ctx.stroke()
+</script>
+</html>

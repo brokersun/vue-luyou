@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas</title>
+</head>
+<canvas width="500" height="500"></canvas>
+<body>
+	<script>
+var mycanvas=document.querySelector("canvas")
+
+var ctx=mycanvas.getContext("2d")
+ctx.translate(250, 250)
+ctx.arc(0, 0, 200, 0, Math.PI*2)
+ctx.stroke()
+
+var r =220
+var angle=Math.PI/3
+ function huaxian(angel){
+
+       ctx.beginPath()
+       ctx.moveTo(0, 0)
+       var x=Math.cos(angle)*r 
+       var y=Math.sin(angle)*r 
+       console.log(x)
+       ctx.lineTo(x, y)
+       ctx.stroke()
+
+
+ }
+huaxian(Math.PI/3)
+
+	</script>
+	
+</body>
+</html>

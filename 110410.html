@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas</title>
+</head>
+<canvas width="500" height="500"></canvas>
+<body>
+	<script>
+var mycanvas=document.querySelector("canvas")
+var ctx=mycanvas.getContext("2d")
+function ssc(){
+
+   var r =Math.floor(Math.random()*256)
+    var g =Math.floor(Math.random()*256)
+   	var b =Math.floor(Math.random()*256)
+
+   	return 'rgb(' + r + ',' + g + ',' + b + ')'
+
+
+}
+
+var num=5
+var jiaodu=Math.PI * 2 / num;
+console.log(jiaodu)
+var stara=0
+for(i=0;i<num; i++){
+       ctx.beginPath()
+       stara=i * jiaodu
+      endAngle=(i+1)*jiaodu
+      ctx.moveTo(250, 250)
+     ctx.arc(250, 250, 250, stara, endAngle)
+     ctx.fillStyle=ssc()
+     ctx.fill()
+
+
+     console.log(stara)
+    // console.log(endAngle)
+
+}
+
+
+	</script>
+
+	
+</body>
+</html>

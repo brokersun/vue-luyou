@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas</title>
+</head>
+<style>
+	canvas{
+
+		border:1px solid;
+	}
+</style>
+
+<body>
+<canvas width="500" height="500"></canvas>	
+</body>
+<script>
+	var mycanvas=document.querySelector("canvas")
+	var ctx =mycanvas.getContext("2d")
+	var canvash=ctx.canvas.height;
+	var canvasw=ctx.canvas.width;
+	var spa = 20 ;
+   var numx = Math.floor(canvasw/spa)
+   var numy = Math.floor(canvash/spa)
+console.log(numx)
+	for (var i = 0; i <numx; i++) {
+		ctx.beginPath()
+		ctx.moveTo(0, i*spa-0.5)
+		ctx.lineTo(canvash, i*spa-0.5)
+		ctx.stroke()
+	}
+		for (var i = 0; i <numy; i++) {
+		ctx.beginPath()
+		ctx.moveTo(i*spa-0.5,0)
+		ctx.lineTo(i*spa-0.5,canvasw)
+		ctx.stroke()
+	}
+</script>
+</html>

@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas</title>
+</head>
+<style>
+	canvas{
+
+		border: 1px solid
+	}
+</style>
+<body>
+	<canvas width="600" height="600"></canvas>
+</body>
+<script>
+	var mycanvas=document.querySelector("canvas")
+	var ctx=mycanvas.getContext("2d")
+	var canvash =ctx.canvas.height;
+	var canvasw=ctx.canvas.width;
+	var spa=20
+	var jt=4
+
+   var numx = Math.floor(canvasw/spa)
+   var numy = Math.floor(canvash/spa)
+console.log(numx)
+	for (var i = 0; i <numx; i++) {
+		ctx.beginPath()
+		ctx.moveTo(0, i*spa-0.5)
+		ctx.lineTo(canvash, i*spa-0.5)
+		ctx.stroke()
+	}
+		for (var i = 0; i <numy; i++) {
+		ctx.beginPath()
+		ctx.moveTo(i*spa-0.5,0)
+		ctx.lineTo(i*spa-0.5,canvasw)
+		ctx.stroke()
+	}
+	var data = [
+        {
+            x: 100,
+            y: 120
+        },
+        {
+            x: 200,
+            y: 160
+        },
+        {
+            x: 300,
+            y: 240
+        },
+        {
+            x: 400,
+            y: 120
+        },
+        {
+            x: 500,
+            y: 80
+        }
+    ]
+	function ssc(){
+     
+     ctx.moveTo(spa, canvasw-spa)
+     ctx.lineTo(canvasw, canvash-spa)
+     ctx.lineTo(canvasw-jt,canvasw-spa-jt)
+     ctx.lineTo(canvasw-jt,canvasw-spa+jt)
+     ctx.lineTo(canvasw,canvasw-spa)
+     ctx.stroke()
+    ctx.beginPath()
+      ctx.moveTo(spa, canvasw-spa)
+     ctx.lineTo(spa, 0)
+     ctx.lineTo(spa-jt,jt)
+     ctx.lineTo(jt+spa,jt)
+     ctx.lineTo(spa, 0)
+     ctx.stroke()
+
+	}
+        function ssb(X,Y){
+
+         var dian =2
+         var x0=X+spa
+         var y0=canvasw-spa-Y
+         console.log(y0)
+         ctx.beginPath()
+         ctx.moveTo(x0-dian, y0-dian)
+        ctx.lineTo(x0+dian, y0-dian)
+        ctx.lineTo(x0+dian, y0+dian)
+        ctx.lineTo(x0-dian, y0+dian)
+        ctx.closePath()
+        ctx.fill()
+        ctx.stroke()
+
+        }
+       
+
+	ssc();
+       var starx=0
+         var stary=0
+	function huadian(data){
+
+
+           data.forEach(function(item,i){
+           var x=item.x 
+          var y=item.y
+           ssb(x,y)
+         
+        
+
+             if(i==0){
+
+             ctx.beginPath()
+             ctx.moveTo(spa, canvash-spa)
+             ctx.lineTo(x+spa,canvash-spa-y)
+              starx=x+spa 
+              stary=canvash-spa-y
+            ctx.stroke()
+             }
+
+             else{
+
+          ctx.beginPath()
+          ctx.moveTo(starx, stary)
+          ctx.lineTo(x+spa,canvash-spa-y)
+           starx=x+spa 
+              stary=canvash-spa-y
+             
+            ctx.stroke()
+
+             }
+
+
+
+       }
+
+
+
+
+
+
+           )
+
+            
+           }
+
+
+
+	huadian(data)
+
+
+
+
+</script>
+
+</html>

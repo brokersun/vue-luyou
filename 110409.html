@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas</title>
+</head>
+<body>
+	<canvas width="500" height="500"></canvas>
+</body>
+<script>
+	var mycanvs=document.querySelector("canvas")
+	var ctx= mycanvs.getContext("2d")
+	var h =ctx.canvas.height;
+	var w=ctx.canvas.width;
+	ctx.arc(h/2, w/2, h/2, 0, Math.PI,true)
+	ctx.stroke()
+</script>
+</html>
